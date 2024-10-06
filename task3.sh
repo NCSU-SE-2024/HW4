@@ -7,4 +7,4 @@ gawk -F',' 'NR > 1 {
     }
 }' titanic.csv | \
 sed 's/,male/,M/g; s/,female/,F/g' | \
-gawk -F',' '$7 != "" { total += $7; count++ } END { if (count > 0) print total/count; else print "No passengers with age data" }'
+gawk -F',' '$7 != "" { total += $7; count++ } END { print total/count; }'
